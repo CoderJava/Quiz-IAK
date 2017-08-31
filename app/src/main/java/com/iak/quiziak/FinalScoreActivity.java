@@ -42,6 +42,9 @@ public class FinalScoreActivity extends AppCompatActivity {
                 intentQuestion1Activity.putExtra("namaPengguna", namaPengguna);
                 intentQuestion1Activity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intentQuestion1Activity);
+
+                // pop stack FinalScore
+                /*finish();*/
             }
         });
     }

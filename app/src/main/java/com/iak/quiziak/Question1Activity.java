@@ -37,7 +37,7 @@ public class Question1Activity extends AppCompatActivity {
 
         // ambil nilai dari intent sebelumnya
         Bundle bundle = getIntent().getExtras();
-        final String namaPengguna = bundle.getString("namaPengguna");
+        final String namaPengguna = bundle.getString("namaPengguna", "");
 
         // set text nama pengguna ke TextView
         textViewNamaPenggunaQuestion1Activity.setText(namaPengguna);
