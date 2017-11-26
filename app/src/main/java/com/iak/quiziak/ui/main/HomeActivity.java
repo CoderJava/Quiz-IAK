@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.iak.quiziak.R;
-import com.iak.quiziak.ui.question.DashboardQuestionActivity;
+import com.iak.quiziak.ui.question.dashboard.DashboardQuestionActivity;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 

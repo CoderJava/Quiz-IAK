@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.iak.quiziak.ui.question.DashboardQuestionActivity">
+    tools:context="com.iak.quiziak.ui.question.dashboard.DashboardQuestionActivity">
 
     <RelativeLayout
         android:id="@+id/relative_layout_container_header_user_profile_activity_dashboard_question"

@@ -1,4 +1,4 @@
-package com.iak.quiziak.ui.question;
+package com.iak.quiziak.ui.question.dashboard;
 
 import android.content.Context;
 import android.content.SharedPreferences;
