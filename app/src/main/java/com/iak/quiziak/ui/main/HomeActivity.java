@@ -1,4 +1,4 @@
-package com.iak.quiziak;
+package com.iak.quiziak.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.iak.quiziak.R;
+import com.iak.quiziak.ui.question.DashboardQuestionActivity;
 
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -36,9 +39,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                             .show();
                 } else {
                     // nama pengguna sudah di isi
-                    Intent intentQuestion1Activity = new Intent(HomeActivity.this, Question1Activity.class);
-                    intentQuestion1Activity.putExtra("namaPengguna", namaPengguna);
-                    startActivity(intentQuestion1Activity);
+                    Intent intentDashboardQuestionActivity = new Intent(
+                            HomeActivity.this,
+                            DashboardQuestionActivity.class
+                    );
+                    intentDashboardQuestionActivity.putExtra("namaPengguna", namaPengguna);
+                    startActivity(intentDashboardQuestionActivity);
                 }
                 break;
             default:
