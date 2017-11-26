@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Quiz IAK</string>
     <string name="submit">Submit</string>
+    <string name="masukkan_nama_anda">Masukkan nama Anda</string>
+    <string name="image_view_icon_user_activity_home">image view icon user activity home</string>
 </resources>

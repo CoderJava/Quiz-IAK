@@ -1,16 +1,15 @@
 package com.iak.quiziak;
 
 import android.content.Intent;
-import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class HomeActivity extends AppCompatActivity  {
+public class HomeActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText editTextNamaPenggunaHomeActivity;
     private Button buttonSubmitNamaPenggunaHomeActivity;
@@ -22,9 +21,13 @@ public class HomeActivity extends AppCompatActivity  {
 
         editTextNamaPenggunaHomeActivity = (EditText) findViewById(R.id.edit_text_nama_pengguna_activity_home);
         buttonSubmitNamaPenggunaHomeActivity = (Button) findViewById(R.id.button_submit_nama_pengguna_activity_home);
-        buttonSubmitNamaPenggunaHomeActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        buttonSubmitNamaPenggunaHomeActivity.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button_submit_nama_pengguna_activity_home:
                 // ketika button ditekan maka, operasi masuk ke sini
                 String namaPengguna = editTextNamaPenggunaHomeActivity.getText().toString().trim();
                 if (namaPengguna.isEmpty() || TextUtils.isEmpty(namaPengguna)) {
@@ -36,18 +39,10 @@ public class HomeActivity extends AppCompatActivity  {
                     Intent intentQuestion1Activity = new Intent(HomeActivity.this, Question1Activity.class);
                     intentQuestion1Activity.putExtra("namaPengguna", namaPengguna);
                     startActivity(intentQuestion1Activity);
-
-                    Bundle bundle = new Bundle();
-                    bundle.putString("namaPengguna", namaPengguna);
-                    /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                        // os android jelly bean keatas
-                        startActivity(intentQuestion1Activity, bundle);
-                    } else {
-                        // os android jelly bean kebawah
-                        startActivity(intentQuestion1Activity);
-                    }*/
                 }
-            }
-        });
+                break;
+            default:
+                /** nothing to do in here */
+        }
     }
 }
