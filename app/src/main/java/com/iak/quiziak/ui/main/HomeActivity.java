@@ -1,6 +1,8 @@
 package com.iak.quiziak.ui.main;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
@@ -39,11 +41,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                             .show();
                 } else {
                     // nama pengguna sudah di isi
+                    SharedPreferences sharedPreferencesUserStorage = getSharedPreferences("UserStorage", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editorUserStorage = sharedPreferencesUserStorage.edit();
+                    editorUserStorage.putString("username", namaPengguna);
+                    editorUserStorage.apply();
                     Intent intentDashboardQuestionActivity = new Intent(
                             HomeActivity.this,
                             DashboardQuestionActivity.class
                     );
-                    intentDashboardQuestionActivity.putExtra("namaPengguna", namaPengguna);
                     startActivity(intentDashboardQuestionActivity);
                 }
                 break;

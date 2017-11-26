@@ -1,8 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.iak.quiziak.ui.question.DashboardQuestionActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/relative_layout_container_header_user_profile_activity_dashboard_question"
+        android:layout_width="match_parent"
+        android:layout_height="190dp">
+
+        <ImageView
+            android:id="@+id/image_view_header_background_user_profile_activity_dashboard_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image_view_header_background_user_profile_activity_dashboard_question"
+            android:scaleType="centerCrop"
+            android:src="@drawable/background_user_profile" />
+
+        <ImageView
+            android:id="@+id/image_view_header_background_alpha_user_profile_activity_dashboard_question_activity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="#000000"
+            android:contentDescription="@string/image_view_header_background_alpha_user_profile_activity_dashboard_question_activity" />
+
+        <TextView
+            android:id="@+id/text_view_user_name_activity_dashboard_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:layout_marginTop="8dp"
+            android:fontFamily="casual"
+            android:text="@string/username"
+            android:textColor="#e0e0e0"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/image_view_user_photo_profile_activity_dashboard_question"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_above="@+id/text_view_user_name_activity_dashboard_question"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/image_view_user_photo_profile_activity_dashboard_question"
+            android:scaleType="centerCrop"
+            android:src="@drawable/photo_user_profile" />
+
+        <TextView
+            android:id="@+id/text_view_score_activity_dashoard_question"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/image_view_user_photo_profile_activity_dashboard_question"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="8dp"
+            android:text="@string/score_0"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_data_question_activity_dashboard_question"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

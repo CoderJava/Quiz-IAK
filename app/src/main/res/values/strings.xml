@@ -3,4 +3,11 @@
     <string name="submit">Submit</string>
     <string name="masukkan_nama_anda">Masukkan nama Anda</string>
     <string name="image_view_icon_user_activity_home">image view icon user activity home</string>
+    <string name="image_view_header_background_user_profile_activity_dashboard_question">image view header background user profile activity dashboard question</string>
+    <string name="image_view_header_background_alpha_user_profile_activity_dashboard_question_activity">image view header background alpha user profile activity dashboard question activity</string>
+    <string name="username">Username</string>
+    <string name="image_view_user_name_profile_activity_dashboard_question">image view user name profile activity dashboard question</string>
+    <string name="score">Score</string>
+    <string name="image_view_user_photo_profile_activity_dashboard_question">image view user photo profile activity dashboard question</string>
+    <string name="score_0">Score: 0</string>
 </resources>
