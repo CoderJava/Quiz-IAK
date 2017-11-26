@@ -9,6 +9,11 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
 import com.iak.quiziak.R;
+import com.iak.quiziak.model.Question;
+import com.iak.quiziak.ui.question.dashboard.adapter.AdapterDashboardQuestion;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DashboardQuestionActivity extends AppCompatActivity {
 
@@ -34,6 +39,30 @@ public class DashboardQuestionActivity extends AppCompatActivity {
 
     private void setupAdapterQuestion() {
         recyclerViewDataQuestionDashboardQuestionActivity.setLayoutManager(new LinearLayoutManager(this));
+        List<Question> questions = new ArrayList<>();
+        questions.add(new Question(1, "Text Editor / IDE", false, false));
+        questions.add(new Question(2, "Android N", false, false));
+        questions.add(new Question(3, "Penemu Android", false, false));
+        AdapterDashboardQuestion adapterDashboardQuestion = new AdapterDashboardQuestion(
+                questions,
+                new AdapterDashboardQuestion.ListenerAdapterDashboardQuestion() {
+                    @Override
+                    public void onClickItem(int numberQuestion) {
+                        switch (numberQuestion) {
+                            case 1:
+                                // TODO: 11/26/17 do something in here
+                                break;
+                            case 2:
+                                // TODO: 11/26/17 do something in here
+                                break;
+                            case 3:
+                                // TODO: 11/26/17 do something in here
+                                break;
+                        }
+                    }
+                }
+        );
+        recyclerViewDataQuestionDashboardQuestionActivity.setAdapter(adapterDashboardQuestion);
     }
 
     private void setupUserProfile() {
