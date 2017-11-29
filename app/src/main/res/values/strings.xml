@@ -14,4 +14,5 @@
     <string name="image_view_wrong_answer_item_dashboard_question">image view wrong answer item dashboard question</string>
     <string name="image_view_right_answer_item_dashboard_question">image view right answer item dashboard question</string>
     <string name="question_title">Question Title</string>
+    <string name="next">Next</string>
 </resources>
