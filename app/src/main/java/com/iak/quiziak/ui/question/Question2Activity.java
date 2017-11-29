@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.iak.quiziak.R;
 
+import java.util.ArrayList;
+
 public class Question2Activity extends AppCompatActivity {
 
     private TextView textViewQuestion2Activity;
@@ -23,6 +25,7 @@ public class Question2Activity extends AppCompatActivity {
     private String username;
     private int totalRightAnswer;
     private int totalWrongAnswer;
+    private ArrayList<Integer> listAnswer;
     private boolean isSelectedAnswer;
     private boolean isRightAnswer;
 
@@ -37,6 +40,7 @@ public class Question2Activity extends AppCompatActivity {
             username = bundle.getString("username");
             totalRightAnswer = bundle.getInt("totalRightAnswer");
             totalWrongAnswer = bundle.getInt("totalWrongAnswer");
+            listAnswer = bundle.getIntegerArrayList("listAnswer");
         }
 
         // set nilai text ke view
@@ -113,6 +117,9 @@ public class Question2Activity extends AppCompatActivity {
                 // Kirimkan nilai username ke activity atau halaman berikutnya
                 intentFinalScoreActivity.putExtra("username", username);
 
+                // Kirimkan nilai collection listAnswer ke activity atau halaman berikutnya
+                intentFinalScoreActivity.putExtra("listAnswer", listAnswer);
+
                 // Kirimkan nilai totalRightAnswer ke activity atau halaman berikutnya
                 intentFinalScoreActivity.putExtra("totalRightAnswer", totalRightAnswer);
 
@@ -126,13 +133,20 @@ public class Question2Activity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        // Pengguna tidak bisa kembali ke halaman atau activity sebelumnya
+    }
+
     private void rightAnswer() {
         isSelectedAnswer = true;
         isRightAnswer = true;
+        listAnswer.add(1);
     }
 
     private void wrongAnswer() {
         isSelectedAnswer = true;
         isRightAnswer = false;
+        listAnswer.add(0);
     }
 }

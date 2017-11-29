@@ -15,4 +15,6 @@
     <string name="image_view_right_answer_item_dashboard_question">image view right answer item dashboard question</string>
     <string name="question_title">Question Title</string>
     <string name="next">Next</string>
+    <string name="image_view_background_user_profile">image view background user profile</string>
+    <string name="image_view_user_photo_profile">image view user photo profile</string>
 </resources>

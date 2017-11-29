@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.iak.quiziak.R;
 
+import java.util.ArrayList;
+
 public class Question1Activity extends AppCompatActivity {
 
     private RadioGroup radioGroupAnswerQuestion1Activity;
@@ -18,6 +20,7 @@ public class Question1Activity extends AppCompatActivity {
     private int totalWrongAnswer;
     private boolean isSelectedAnswer;
     private boolean isRightAnswer;
+    private ArrayList<Integer> listAnswer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +33,13 @@ public class Question1Activity extends AppCompatActivity {
         // Inisialisasi nilai awal variable totalRightAnswer dan totalWrongAnswer
         totalRightAnswer = 0;
         totalWrongAnswer = 0;
+
+        // Inisialisasi nilai awal variable isSelectedAnswer
         isSelectedAnswer = false;
+
+        // Inisialisasi nilai awal collection listAnswer
+        listAnswer = new ArrayList<>();
+        
         radioGroupAnswerQuestion1Activity = (RadioGroup) findViewById(R.id.radio_group_answer_activity_question1);
         radioGroupAnswerQuestion1Activity.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -77,10 +86,12 @@ public class Question1Activity extends AppCompatActivity {
                     // Jika jawaban si pengguna benar maka, tambah 1 nilai ke variable
                     // totalRightAnswer
                     totalRightAnswer = totalRightAnswer + 1;
+                    listAnswer.add(1);
                 } else {
                     // Jika jawaban si pengguna salah maa, tambah 1 nilai ke variable
                     // totalWrongAnswer
                     totalWrongAnswer = totalWrongAnswer + 1;
+                    listAnswer.add(0);
                 }
 
                 Intent intentQuestion2Activity = new Intent(
@@ -90,6 +101,9 @@ public class Question1Activity extends AppCompatActivity {
 
                 // Kirim nilai variable username ke Question2Activity
                 intentQuestion2Activity.putExtra("username", username);
+
+                // Kirim nilai collection listAnswer ke Question2Activity
+                intentQuestion2Activity.putExtra("listAnswer", listAnswer);
 
                 // Kirim nilai variable totalRightAnswer dan totalWrongAnswer
                 // ke Question2Activity
